@@ -1,30 +1,30 @@
-1 �����豸��������λͼ���
+1 定义设备描述表及位图句柄
 
 HDC hMemDC;
 HBITMAP hBitmap;
 
-2 ����һ���봰�ھ��μ��ݵ��ڴ���ʾ�����豸��
+2 创建一个与窗口矩形兼容的内存显示描述设备表
 
 hMemDC = CreateCompatibleDC( hDC );
 
-3 ��hdc����һ���봰�ھ�����ʾ���ݵ�λͼ
+3 用hdc创建一个与窗口矩形显示兼容的位图
 
 hBitmap = CreateCompatibleBitmap( hDC, rt.right - rt.left, rt.bottom - tr.top )
-				//rtΪRECT������ֵΪ���ھ���
+				//rt为RECT变量，值为窗口矩形
 
-4 ��λͼhBitmapѡ�뵽�ڴ���ʾ�豸hDCMem��,ֻ��ѡ����λͼ���ڴ���ʾ�豸���еط���ͼ
-������ָ����λͼ��
+4 将位图hBitmap选入到内存显示设备hDCMem中,只有选入了位图的内存显示设备才有地方绘图
+，画到指定的位图上
 
 SelectObject( hMemDC, hBitmap );
 
-5 ��hdc����ɫ��λͼ����ɾ�
+5 用hdc背景色将位图清除干净
 
 FillRect( hDCMem, &rt, hBrush );
 
-6 ��ͼ
+6 绘图
 
 DrawCircle( &hDCMem, rt, radius );
 
-7 ���ڴ��е�ͼ���������ھ����Ͻ�����ʾ
+7 将内存中的图拷贝到窗口矩形上进行显示
 
 BitBlt( hdc, 0, 0, rt.right-rt.left, rt.bottom-rt.top, hDCMem, 0, 0, SRCCOPY );

@@ -1,17 +1,17 @@
-char * strcat(*1,*2)   return first hand number   ²»¼ì²éµÚÒ»¸öÊı×éÊÇ·ñÄÜÈİÄÉ£¬²»ÄÜÈİÄÉÔò»áÄÚ´æÒç³öµ½ÏàÁÚÇøÓò
-strncat(~,~,num)   ¶àÒ»¸ö²ÎÊıÖ¸¶¨Ìí¼ÓµÄ×Ö·û´®Êı
+char * strcat(*1,*2)   return first hand number   ä¸æ£€æŸ¥ç¬¬ä¸€ä¸ªæ•°ç»„æ˜¯å¦èƒ½å®¹çº³ï¼Œä¸èƒ½å®¹çº³åˆ™ä¼šå†…å­˜æº¢å‡ºåˆ°ç›¸é‚»åŒºåŸŸ
+strncat(~,~,num)   å¤šä¸€ä¸ªå‚æ•°æŒ‡å®šæ·»åŠ çš„å­—ç¬¦ä¸²æ•°
 
-strcmp()±È½ÏÁ½¸öÖ¸ÕëËùÖ¸µÄÊıÊÇ·ñÏàµÈ£¬±È½ÏµÄÊÇ×Ö·û´®
+strcmp()æ¯”è¾ƒä¸¤ä¸ªæŒ‡é’ˆæ‰€æŒ‡çš„æ•°æ˜¯å¦ç›¸ç­‰ï¼Œæ¯”è¾ƒçš„æ˜¯å­—ç¬¦ä¸²
 
-gets() ²»¶ÁÈ¡»Ø³µ·û(¶ªÆú)£¬·µ»Ø×Ö·û´®µØÖ·,³ö´í»òÓöµ½ÎÄ¼ş½áÎ²·µ»Ø¿ÕÖ¸ÕëNULL
+gets() ä¸è¯»å–å›è½¦ç¬¦(ä¸¢å¼ƒ)ï¼Œè¿”å›å­—ç¬¦ä¸²åœ°å€,å‡ºé”™æˆ–é‡åˆ°æ–‡ä»¶ç»“å°¾è¿”å›ç©ºæŒ‡é’ˆNULL
 
-strcpy  ¡°µÈ¼Û¡±¸³Öµ£¬·µ»ØµÚÒ»¸ö²ÎÊıµØÖ·
+strcpy  â€œç­‰ä»·â€èµ‹å€¼ï¼Œè¿”å›ç¬¬ä¸€ä¸ªå‚æ•°åœ°å€
 
-puts×Ô¶¯Ìí¼Ó»»ĞĞ·û
+putsè‡ªåŠ¨æ·»åŠ æ¢è¡Œç¬¦
 
-strlen·µ»Ø×Ö·û´®ÊıÄ¿£¬²»°üÀ¨½áÊø±êÖ¾µÄ¿Õ×Ö·û
+strlenè¿”å›å­—ç¬¦ä¸²æ•°ç›®ï¼Œä¸åŒ…æ‹¬ç»“æŸæ ‡å¿—çš„ç©ºå­—ç¬¦
 
-const float * pf ºÍ float * const pf
+const float * pf å’Œ float * const pf
 
 const float * const ptr
 
@@ -25,14 +25,14 @@ char *strpbrk( char const *str, char const *group );
 
 char *strstr( char const *s1, char const *s2 );
 
-size_t strspn( char const *str, char const *group ); //·µ»ØstrÖĞ¿ªÊ¼Á¬ĞøÆ¥Åäµ½groupÖĞ
-						       ×Ö·ûµÄ¸öÊı
+size_t strspn( char const *str, char const *group ); //è¿”å›strä¸­å¼€å§‹è¿ç»­åŒ¹é…åˆ°groupä¸­
+						       å­—ç¬¦çš„ä¸ªæ•°
 
  
-ptrdiff_t  Ö¸Õë¼õ·¨½á¹û ÀàĞÍ
-char *strtok( char *str, char const *sep );   //ÓÃsepÖĞµÄ·Ö¸ô·û·Ö¿ª×Ö·û´®str£¬ ÄÚ²¿»á±£´æstr
+ptrdiff_t  æŒ‡é’ˆå‡æ³•ç»“æœ ç±»å‹
+char *strtok( char *str, char const *sep );   //ç”¨sepä¸­çš„åˆ†éš”ç¬¦åˆ†å¼€å­—ç¬¦ä¸²strï¼Œ å†…éƒ¨ä¼šä¿å­˜str
 
 char *strtok( char *str, char const *sep )
 
 
-size_t strcspen( char const *str, char const *group ); //ÓëÉÏÏà·´
+size_t strcspen( char const *str, char const *group ); //ä¸ä¸Šç›¸å

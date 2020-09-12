@@ -1,20 +1,20 @@
-atoi()  �ַ���ת��Ϊint
-atof()  �ַ���ת��Ϊdouble
-atol()  �ַ���ת��Ϊlong
+atoi()  字符串转换为int
+atof()  字符串转换为double
+atol()  字符串转换为long
 
-�����ԣ�ʶ�𲢱�������ֲ��ֵĵ�һ���ַ�
-strtol()  ת��Ϊlong              (����ָ�����ֵĻ���)
-strtoul() ת��Ϊunsigned long     (����ָ�����ֵĻ���)
-strtod()  ת��Ϊdouble
+复杂性：识别并报告非数字部分的第一个字符
+strtol()  转换为long              (允许指定数字的基数)
+strtoul() 转换为unsigned long     (允许指定数字的基数)
+strtod()  转换为double
 
 
-rand()���������
-srand����Ϊrand�ṩ����
+rand()产生随机数
+srand（）为rand提供种子
 
-malloc():(double *)malloc(num * sizeof(double))  //����Ϊ�����ֽ���
-calloc():(long *)calloc(100,sizeof(long))        //����Ϊ����Ԫ��������ÿ��Ԫ���ֽ���
-						 //��ʼ��Ϊ0
-realloc( void *ptr, size_t new_size ) //�޸�ԭ�ȷ����ڴ�Ĵ�С���������Ϊnull������molloc
-					//��ͬ
+malloc():(double *)malloc(num * sizeof(double))  //参数为所需字节数
+calloc():(long *)calloc(100,sizeof(long))        //参数为所需元素数量和每个元素字节数
+						 //初始化为0
+realloc( void *ptr, size_t new_size ) //修改原先分配内存的大小，如果参数为null，则与molloc
+					//相同
 
 exit():

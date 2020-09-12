@@ -2,36 +2,36 @@ GetStdHandle
 
 SetConsoleCursorPosition
 
-���ƣ�HANDLE GetStdHandle( _In_DWORD nStdHand )
-˵������ȡ��׼�豸���nStdHandle��׼�豸,��ȡֵ��STD_INPUT_HANDLE(DWORD)-10,�����豸
-	STD_OUTPUT_HANDLE(DWORD)-11,����豸 STD_ERROR_HANDLE(DWORD)-12,
-	�����豸���÷��أ��ɹ��������豸���(HANDLE);ʧ�ܣ�����INVALID_HANDLE_VALUE;
-	���û�б�׼�豸������NULL
+名称：HANDLE GetStdHandle( _In_DWORD nStdHand )
+说明：获取标准设备句柄nStdHandle标准设备,可取值：STD_INPUT_HANDLE(DWORD)-10,输入设备
+	STD_OUTPUT_HANDLE(DWORD)-11,输出设备 STD_ERROR_HANDLE(DWORD)-12,
+	错误设备调用返回：成功，返回设备句柄(HANDLE);失败，返回INVALID_HANDLE_VALUE;
+	如果没有标准设备，返回NULL
 
-����:BOLL SetConsoleCursorPosition( _In_ HANDLE, COORD )
-˵��:���ÿ���̨���λ��hConsoleOutput ����̨����豸��� dwCursorPosition ���λ��
+名称:BOLL SetConsoleCursorPosition( _In_ HANDLE, COORD )
+说明:设置控制台光标位置hConsoleOutput 控制台输出设备句柄 dwCursorPosition 光标位置
 
-COORD�ṹ��
-���ƣ�XSHORT X;
-˵����ˮƽ�������ֵ����0��ʼ
-���ƣ�YSHORT Y;
-˵������ֱ�������ֵ����0��ʼ
+COORD结构体
+名称：XSHORT X;
+说明：水平坐标或列值，从0开始
+名称：YSHORT Y;
+说明：垂直坐标或列值，从0开始
 
-���ƣ�HANDLE WINAPICreateConsoleScreenBuffer( _In_DWORD dwDesiredAccess, 
+名称：HANDLE WINAPICreateConsoleScreenBuffer( _In_DWORD dwDesiredAccess, 
 	_In_DWORD dwShareMode, _In_opt_ const SECURITY _ATTRIBUTES *lpSecurityAttributes,
 	_In_DWORD dwFlags, _Reserved_ LPVOIDlpScreenBuffer )
-˵������������̨��ʾ����dwDesiredAccess, ����̨���尲ȫ�����Ȩ�ޣ���ȡֵ��GENERIC_READ
-	(0x80000000L), ��Ȩ��GENERIC_WRITE(0x40000000L), дȨ��dwShareMode, ����ģʽ��
-	��ȡֵ��FILE_SHARE_READ,������ FILE_SHARE_WRITE д����lpSecurityAttributes, 
-	��ȫ���ԣ� NULLdwFlags, ���������ͣ� ����ѡ��CONSOLE_TEXTMODE_BUFFER, ����̨�ı�ģʽ
-	����lpScreenBufferData, ����, NULL
+说明：创建控制台显示缓冲dwDesiredAccess, 控制台缓冲安全与访问权限，可取值：GENERIC_READ
+	(0x80000000L), 读权限GENERIC_WRITE(0x40000000L), 写权限dwShareMode, 共享模式，
+	可取值：FILE_SHARE_READ,读共享 FILE_SHARE_WRITE 写共享lpSecurityAttributes, 
+	安全属性， NULLdwFlags, 缓冲区类型， 仅可选：CONSOLE_TEXTMODE_BUFFER, 控制台文本模式
+	缓冲lpScreenBufferData, 保留, NULL
 
-���ƣ�BOOL WINAPISetConsoleActiveScreenBuffer( _In_ HANDLE )
-˵�������ÿ���̨���ʾ����hConsoleOutput, ����̨����豸���
+名称：BOOL WINAPISetConsoleActiveScreenBuffer( _In_ HANDLE )
+说明：设置控制台活动显示缓冲hConsoleOutput, 控制台输出设备句柄
 
-���ƣ�BOOL WINAPISetConsoleCursorInfo( _In_ HANDLE hCons, 
+名称：BOOL WINAPISetConsoleCursorInfo( _In_ HANDLE hCons, 
 	CONSOLE_SURSOR_INFO *lpConsoleCursorInfo );
-˵�������ÿ���̨�����ϢhConsoleOutput, ����̨����豸���lpConsoleCursorInfo,
-	�����Ϣ����С���ɼ��ԣ�
+说明：设置控制台光标信息hConsoleOutput, 控制台输出设备句柄lpConsoleCursorInfo,
+	光标信息（大小，可见性）
 
-���ƣ�BOOL WINAPIWriteConsoleOutputCharacterA( _In_ HANDLE
+名称：BOOL WINAPIWriteConsoleOutputCharacterA( _In_ HANDLE
