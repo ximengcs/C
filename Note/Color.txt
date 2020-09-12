@@ -1,0 +1,20 @@
+0 黑	8  灰
+1 蓝	9  淡蓝
+2 绿	10 淡绿
+3 浅绿 	11 淡浅绿
+4 红	12 淡红
+5 紫 	13 淡紫
+6 黄	14 淡黄
+7 白 	15 亮白
+
+设置颜色函数：
+
+参数1：字体颜色  参数2：字体颜色
+void setColor( unsigned short ForeColor = 7, unsigned short BackGroundColor = 0 )
+
+调用：
+
+光标位置
+SetPos( 30, 10 );
+设置颜色
+setColor( 10, 0 );

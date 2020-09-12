@@ -1,0 +1,3 @@
+system( "cls" );   清屏
+
+sleep( 1000 );   weindows下延时1000毫秒， linux下延时1000秒

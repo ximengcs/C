@@ -1,0 +1,15 @@
+consret x:/fs:ntfs
+
+title CENTOS
+
+kernel (hd0,4)/isolinux/vmlinuz
+
+initrd (hd0,4)/isolinux/initrd.img
+
+
+3种相同形式：  void sum_rows(int ar[][COLS],int rows);
+void sum_cols(int [][COLS],int);
+int sum2d(int (*ar)[COLS],int rows);
+
+
+53:48

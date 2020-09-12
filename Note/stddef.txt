@@ -1,0 +1,3 @@
+size_t offsetof( type, member );
+
+返回type类型的结构中的menber便宜了几个位置

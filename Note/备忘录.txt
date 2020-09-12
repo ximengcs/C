@@ -1,0 +1,38 @@
+char * strcat(*1,*2)   return first hand number   不检查第一个数组是否能容纳，不能容纳则会内存溢出到相邻区域
+strncat(~,~,num)   多一个参数指定添加的字符串数
+
+strcmp()比较两个指针所指的数是否相等，比较的是字符串
+
+gets() 不读取回车符(丢弃)，返回字符串地址,出错或遇到文件结尾返回空指针NULL
+
+strcpy  “等价”赋值，返回第一个参数地址
+
+puts自动添加换行符
+
+strlen返回字符串数目，不包括结束标志的空字符
+
+const float * pf 和 float * const pf
+
+const float * const ptr
+
+float const *pf == const float *pf
+
+char *strchr( char const *str, int ch );
+
+char *strrchr( char const *str, int ch );
+
+char *strpbrk( char const *str, char const *group );
+
+char *strstr( char const *s1, char const *s2 );
+
+size_t strspn( char const *str, char const *group ); //返回str中开始连续匹配到group中
+						       字符的个数
+
+ 
+ptrdiff_t  指针减法结果 类型
+char *strtok( char *str, char const *sep );   //用sep中的分隔符分开字符串str， 内部会保存str
+
+char *strtok( char *str, char const *sep )
+
+
+size_t strcspen( char const *str, char const *group ); //与上相反
