@@ -1,3 +1,4 @@
+#pragma once
 #include <string.h>
 #include <windows.h>
 #ifndef   BIT
@@ -203,50 +204,6 @@ void setcolor( unsigned short ForeColor, unsigned short BackGroundColor )
 {
 	HANDLE handle = GetStdHandle( STD_OUTPUT_HANDLE );//获取当前窗口句柄
 	SetConsoleTextAttribute( handle, ForeColor+BackGroundColor*0x10 );//设置颜色
-}
-
-static int CURRENT = -1;//用来标识当前为第几个缓冲区, 如果为-1，则没有缓冲区
-static HANDLE output_one;
-static HANDLE output_two;
-COORD  coord = { 0, 0 };  //用来回到缓冲区0,0
-CONSOLE_CURSOR_INFO cci = { 1, 0 };  //设置隐藏控制台光标参数
-static int NUMBER;
-
-void createhandle( void )
-{
-	if( CURRENT == -1 ){
-		output_one = CreateConsoleScreenBuffer( GENERIC_WRITE | GENERIC_READ, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL );	//缓冲区1
-		output_two = CreateConsoleScreenBuffer( GENERIC_WRITE | GENERIC_READ, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL ); //缓冲区2
-		SetConsoleCursorInfo( output_one, &cci );//设置缓冲区1的光标不可见
-		SetConsoleCursorInfo( output_two, &cci );//设置缓冲区2的光标不可见
-		CURRENT = 1;
-	}
-}
-
-void print( char chars[], unsigned int distance, int size ) //chars为输出文字的数组，ditancce为数组大小
-{
-	createhandle();
-	
-	if( CURRENT == 1 ){        //显示缓冲区1
-		WriteConsole( output_one, chars, distance, NULL, NULL );   //将chars的内容写入缓冲区1
-		NUMBER++;
-		if( NUMBER == size){
-			SetConsoleActiveScreenBuffer( output_one ); //设置缓冲区1为当前可见缓冲区
-			SetConsoleCursorPosition( output_one, coord );            //设置缓冲区1的光标为0，0
-			NUMBER = 0;
-			CURRENT = 0;
-		}
-	}
-	else{                     //显示缓冲区2
-		WriteConsole( output_two, chars, distance, NULL, NULL );
-		NUMBER++;
-		if( NUMBER == size){
-			SetConsoleActiveScreenBuffer( output_two );
-			SetConsoleCursorPosition( output_two, coord );
-			NUMBER = 0;
-			CURRENT = 1;
-		}
-	}
 }
 
 //设置光标位置
